@@ -2,7 +2,7 @@ package jwon.baekjoon;
 
 import java.util.*;
 
-public class B_2295_세_수의_합_240130 {
+public class B_240130_세_수의_합_2295 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

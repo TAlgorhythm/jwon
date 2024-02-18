@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class B_2644_촌수계산_240129 {
+public class B_240129_촌수계산_2644 {
     static int[] findArr;
 
     public static void main(String[] args) throws IOException {
