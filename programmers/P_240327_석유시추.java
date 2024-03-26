@@ -19,7 +19,7 @@ public class P_240327_석유시추 {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (arr[i][j] == 1 && oil[i][j] == 0) {
-                    dfs(i, j, num++);
+                    bfs(i, j, num++);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class P_240327_석유시추 {
     int[] dirY = {1, -1, 0, 0};
     int[] dirX = {0, 0, 1, -1};
 
-    public void dfs(int y, int x, int num) {
+    public void bfs(int y, int x, int num) {
         int count = 0;
         Queue<Node> queue = new LinkedList<>();
         queue.offer(new Node(y, x));
