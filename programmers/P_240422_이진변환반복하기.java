@@ -9,8 +9,14 @@ public class P_240422_이진변환반복하기 {
     int count = 0;
     int num = 0;
     for (int i = s.length() - 1; i >= 0; i--) {
-      num |= Integer.valueOf(s.charAt(i));
+      int temp = s.charAt(i) - '0';
+      System.out.println(temp);
+      System.out.println(Math.pow(2, s.length() - i - 1));
+      if (temp == 1) {
+        num += Math.pow(2, s.length() - i - 1);
+      }
     }
+    System.out.println("num : " + num);
     while (num != 1) {
       count++;
       StringBuilder sb = new StringBuilder();
@@ -30,7 +36,12 @@ public class P_240422_이진변환반복하기 {
       s = sb.toString();
       num = 0;
       for (int i = s.length() - 1; i >= 0; i--) {
-        num |= Integer.valueOf(s.charAt(i));
+        int temp = s.charAt(i) - '0';
+        System.out.println(temp);
+        System.out.println(Math.pow(2, s.length() - i - 1));
+        if (temp == 1) {
+          num += Math.pow(2, s.length() - i - 1);
+        }
       }
     }
     answer[0] = count;
@@ -39,7 +50,7 @@ public class P_240422_이진변환반복하기 {
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(solution("110010101001")));
+    System.out.println(Arrays.toString(solution("01110")));
 
   }
 }
