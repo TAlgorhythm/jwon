@@ -8,14 +8,7 @@ public class P_240422_이진변환반복하기 {
     int zeroCount = 0;
     int count = 0;
     int num = 0;
-    for (int i = s.length() - 1; i >= 0; i--) {
-      int temp = s.charAt(i) - '0';
-      System.out.println(temp);
-      System.out.println(Math.pow(2, s.length() - i - 1));
-      if (temp == 1) {
-        num += Math.pow(2, s.length() - i - 1);
-      }
-    }
+    num = makeDecimal(s);
     System.out.println("num : " + num);
     while (num != 1) {
       count++;
@@ -34,23 +27,25 @@ public class P_240422_이진변환반복하기 {
         len /= 2;
       }
       s = sb.toString();
-      num = 0;
-      for (int i = s.length() - 1; i >= 0; i--) {
-        int temp = s.charAt(i) - '0';
-        System.out.println(temp);
-        System.out.println(Math.pow(2, s.length() - i - 1));
-        if (temp == 1) {
-          num += Math.pow(2, s.length() - i - 1);
-        }
-      }
+      num = makeDecimal(s);
     }
     answer[0] = count;
     answer[1] = zeroCount;
     return answer;
   }
 
+  private static int makeDecimal(String str) {
+    int num = 0;
+    for (int i = 0; i < str.length(); i++) {
+      if(str.charAt(i) == '1'){
+        num += Math.pow(2,i);
+      }
+    }
+    return num;
+  }
+
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(solution("01110")));
+    System.out.println(Arrays.toString(solution("1111111")));
 
   }
 }
